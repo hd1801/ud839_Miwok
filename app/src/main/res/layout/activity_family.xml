@@ -22,6 +22,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/category_family"
     tools:context="com.example.android.miwok.FamilyActivity"
     android:id="@+id/ListView">
 
