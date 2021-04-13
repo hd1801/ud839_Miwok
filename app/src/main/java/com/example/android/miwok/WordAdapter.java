@@ -21,9 +21,10 @@ import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-
-    public WordAdapter(@NonNull Context context, int resource, ArrayList<Word> words) {
+    private int colorResourceID;
+    public WordAdapter(@NonNull Context context, int resource, ArrayList<Word> words,int colorResourceID) {
         super(context, 0, words);
+        this.colorResourceID=colorResourceID;
 
     }
 
@@ -50,6 +51,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else
             imageView.setVisibility(View.GONE);
 
+        // Set the theme color for the list item
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        // Find the color that the resource ID maps to
+        int color = ContextCompat.getColor(getContext(), colorResourceID);
+        // Set the background color of the text container View
+        textContainer.setBackgroundColor(color);
 
         // Return the whole list item layout (containing 2 TextViews and 1 ImageView)
         // so that it can be shown in the ListView
